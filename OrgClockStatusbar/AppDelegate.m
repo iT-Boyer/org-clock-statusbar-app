@@ -23,7 +23,9 @@
     // self.statusBar.title = @"Text";
     self.orgClockedOut = [NSImage imageNamed:@"black box"];
     self.orgClockedIn = [NSImage imageNamed:@"red box"];
+    self.statusMenu.title = @"jjjjj";
     self.statusBar.menu = self.statusMenu;
+    [self.statusBar.button setTitle:@"哈哈大的点点滴滴点点滴滴"];
     self.statusBar.highlightMode = YES;
 
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"swapRedAndBlack"]) {
@@ -38,7 +40,7 @@
 }
 
 -(void) clockIn:(NSString*)taskName {
-    self.statusBar.image = self.orgClockedIn;
+//    self.statusBar.image = self.orgClockedIn;
     [self.statusBar.menu itemWithTag:1].title = [self currentTaskName: taskName];
     self.statusBar.toolTip = taskName;
     self.status = YES;
@@ -46,7 +48,7 @@
 
 -(void) clockOut {
     NSString* taskName = @"nil";
-    self.statusBar.image = self.orgClockedOut;
+//    self.statusBar.image = self.orgClockedOut;
     [self.statusBar.menu itemWithTag:1].title = [self currentTaskName: taskName];
     self.statusBar.toolTip = taskName;
     self.status = NO;
@@ -54,9 +56,9 @@
 
 -(void) refresh {
     if (self.status) {
-        self.statusBar.image = self.orgClockedIn;
+//        self.statusBar.image = self.orgClockedIn;
     } else {
-        self.statusBar.image = self.orgClockedOut;
+//        self.statusBar.image = self.orgClockedOut;
     }
 }
 
