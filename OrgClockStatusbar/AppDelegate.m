@@ -96,7 +96,6 @@
 - (NSString*)toggle {
     NSMenuItem * theItem = [self.statusBar.menu itemWithTag:2];   // set it manually in interface builder
     NSString* result;
-    
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"swapRedAndBlack"]) {
         [theItem setState: NSControlStateValueOff];
         self.orgClockedOut = [NSImage imageNamed:@"red box"];
@@ -120,9 +119,8 @@
 -(NSString *)emacsTaskName
 {
     NSString *active = [self outOfAppScriptcommand:@"org-clock-is-active"];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"swapRedAndBlack"]
-        || [active isEqualToString:@"nil"]) {
-        return @"暂无任务安排";
+    if ([active isEqualToString:@"nil"]) {
+        return @"无安排";
     }
     NSString *clock = [self outOfAppScriptcommand:@"org-clock-get-clock-string"];
     //处理字符串：#(" [22:54] (org-agenda 科学使用 [0%])" 0 31
