@@ -22,7 +22,7 @@
 - (IBAction)openGithubPage:(id)sender;
 - (IBAction)toggleRedMeansClockedOut:(id)sender;
 
-- (void) clockIn: (NSString*)taskName;
+- (void) onBarClockIn;
 - (void) clockOut;
 - (NSString*) toggle;
 

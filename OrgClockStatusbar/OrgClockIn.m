@@ -23,7 +23,7 @@
         [self setScriptErrorString:@"A parameter is expected for the verb 'clockin', should be task name."];
     }
 
-    [(AppDelegate *)[[NSApplication sharedApplication] delegate] clockIn:taskName];
+    [(AppDelegate *)[[NSApplication sharedApplication] delegate] onBarClockIn];
     
     return nil;
 }
